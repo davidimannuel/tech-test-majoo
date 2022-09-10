@@ -1,0 +1,335 @@
+{
+	"info": {
+		"_postman_id": "9eb1de9b-a1f3-4749-903c-0f1eeec07703",
+		"name": "Majoo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14492246"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"admin1\",\n    \"password\": \"admin1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/v1/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction Summary",
+			"item": [
+				{
+					"name": "By Month",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOjEsIlVzZXJuYW1lIjoiYWRtaW4xIiwiZXhwIjoxNjYyODA1MDY2fQ.K-_oBHeSVYbChWCjIH3unri4dfIxUlwxK4NNo6qBCNw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/v1/transactionSummary/month?month=11&year=2021&outletId=1&page=2&limit=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"transactionSummary",
+								"month"
+							],
+							"query": [
+								{
+									"key": "month",
+									"value": "11"
+								},
+								{
+									"key": "year",
+									"value": "2021"
+								},
+								{
+									"key": "outletId",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "By Month",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/transactionSummary/month?month=11&year=2021&outletId=1&page=1&limit=5",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"transactionSummary",
+										"month"
+									],
+									"query": [
+										{
+											"key": "month",
+											"value": "11"
+										},
+										{
+											"key": "year",
+											"value": "2021"
+										},
+										{
+											"key": "outletId",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Sep 2022 09:18:01 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "647"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"merchantId\": 1,\n            \"merchantName\": \"merchant 1\",\n            \"outletId\": 1,\n            \"outletName\": \"Outlet 1\",\n            \"omzet\": 4500,\n            \"date\": \"2021-11-01\"\n        },\n        {\n            \"merchantId\": 1,\n            \"merchantName\": \"merchant 1\",\n            \"outletId\": 1,\n            \"outletName\": \"Outlet 1\",\n            \"omzet\": 4000,\n            \"date\": \"2021-11-02\"\n        },\n        {\n            \"merchantId\": 1,\n            \"merchantName\": \"merchant 1\",\n            \"outletId\": 1,\n            \"outletName\": \"Outlet 1\",\n            \"omzet\": 0,\n            \"date\": \"2021-11-03\"\n        },\n        {\n            \"merchantId\": 1,\n            \"merchantName\": \"merchant 1\",\n            \"outletId\": 1,\n            \"outletName\": \"Outlet 1\",\n            \"omzet\": 1000,\n            \"date\": \"2021-11-04\"\n        },\n        {\n            \"merchantId\": 1,\n            \"merchantName\": \"merchant 1\",\n            \"outletId\": 1,\n            \"outletName\": \"Outlet 1\",\n            \"omzet\": 7000,\n            \"date\": \"2021-11-05\"\n        }\n    ],\n    \"meta\": {\n        \"currentPage\": 1,\n        \"perPage\": 5,\n        \"lastPage\": 6,\n        \"totalData\": 30\n    }\n}"
+						},
+						{
+							"name": "By Month",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/transactionSummary/month?month=11&year=2021&outletId=1&page=1&limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"transactionSummary",
+										"month"
+									],
+									"query": [
+										{
+											"key": "month",
+											"value": "11"
+										},
+										{
+											"key": "year",
+											"value": "2021"
+										},
+										{
+											"key": "outletId",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Sep 2022 09:18:09 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1208"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"merchantId\": 1,\n            \"merchantName\": \"merchant 1\",\n            \"outletId\": 1,\n            \"outletName\": \"Outlet 1\",\n            \"omzet\": 4500,\n            \"date\": \"2021-11-01\"\n        },\n        {\n            \"merchantId\": 1,\n            \"merchantName\": \"merchant 1\",\n            \"outletId\": 1,\n            \"outletName\": \"Outlet 1\",\n            \"omzet\": 4000,\n            \"date\": \"2021-11-02\"\n        },\n        {\n            \"merchantId\": 1,\n            \"merchantName\": \"merchant 1\",\n            \"outletId\": 1,\n            \"outletName\": \"Outlet 1\",\n            \"omzet\": 0,\n            \"date\": \"2021-11-03\"\n        },\n        {\n            \"merchantId\": 1,\n            \"merchantName\": \"merchant 1\",\n            \"outletId\": 1,\n            \"outletName\": \"Outlet 1\",\n            \"omzet\": 1000,\n            \"date\": \"2021-11-04\"\n        },\n        {\n            \"merchantId\": 1,\n            \"merchantName\": \"merchant 1\",\n            \"outletId\": 1,\n            \"outletName\": \"Outlet 1\",\n            \"omzet\": 7000,\n            \"date\": \"2021-11-05\"\n        },\n        {\n            \"merchantId\": 1,\n            \"merchantName\": \"merchant 1\",\n            \"outletId\": 1,\n            \"outletName\": \"Outlet 1\",\n            \"omzet\": 0,\n            \"date\": \"2021-11-06\"\n        },\n        {\n            \"merchantId\": 1,\n            \"merchantName\": \"merchant 1\",\n            \"outletId\": 1,\n            \"outletName\": \"Outlet 1\",\n            \"omzet\": 0,\n            \"date\": \"2021-11-07\"\n        },\n        {\n            \"merchantId\": 1,\n            \"merchantName\": \"merchant 1\",\n            \"outletId\": 1,\n            \"outletName\": \"Outlet 1\",\n            \"omzet\": 0,\n            \"date\": \"2021-11-08\"\n        },\n        {\n            \"merchantId\": 1,\n            \"merchantName\": \"merchant 1\",\n            \"outletId\": 1,\n            \"outletName\": \"Outlet 1\",\n            \"omzet\": 0,\n            \"date\": \"2021-11-09\"\n        },\n        {\n            \"merchantId\": 1,\n            \"merchantName\": \"merchant 1\",\n            \"outletId\": 1,\n            \"outletName\": \"Outlet 1\",\n            \"omzet\": 0,\n            \"date\": \"2021-11-10\"\n        }\n    ],\n    \"meta\": {\n        \"currentPage\": 1,\n        \"perPage\": 10,\n        \"lastPage\": 3,\n        \"totalData\": 30\n    }\n}"
+						},
+						{
+							"name": "By Month",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/v1/transactionSummary/month?month=11&year=2021&outletId=1&page=2&limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"v1",
+										"transactionSummary",
+										"month"
+									],
+									"query": [
+										{
+											"key": "month",
+											"value": "11"
+										},
+										{
+											"key": "year",
+											"value": "2021"
+										},
+										{
+											"key": "outletId",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "2"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Sep 2022 09:18:22 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1196"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"merchantId\": 1,\n            \"merchantName\": \"merchant 1\",\n            \"outletId\": 1,\n            \"outletName\": \"Outlet 1\",\n            \"omzet\": 0,\n            \"date\": \"2021-11-11\"\n        },\n        {\n            \"merchantId\": 1,\n            \"merchantName\": \"merchant 1\",\n            \"outletId\": 1,\n            \"outletName\": \"Outlet 1\",\n            \"omzet\": 0,\n            \"date\": \"2021-11-12\"\n        },\n        {\n            \"merchantId\": 1,\n            \"merchantName\": \"merchant 1\",\n            \"outletId\": 1,\n            \"outletName\": \"Outlet 1\",\n            \"omzet\": 0,\n            \"date\": \"2021-11-13\"\n        },\n        {\n            \"merchantId\": 1,\n            \"merchantName\": \"merchant 1\",\n            \"outletId\": 1,\n            \"outletName\": \"Outlet 1\",\n            \"omzet\": 0,\n            \"date\": \"2021-11-14\"\n        },\n        {\n            \"merchantId\": 1,\n            \"merchantName\": \"merchant 1\",\n            \"outletId\": 1,\n            \"outletName\": \"Outlet 1\",\n            \"omzet\": 0,\n            \"date\": \"2021-11-15\"\n        },\n        {\n            \"merchantId\": 1,\n            \"merchantName\": \"merchant 1\",\n            \"outletId\": 1,\n            \"outletName\": \"Outlet 1\",\n            \"omzet\": 0,\n            \"date\": \"2021-11-16\"\n        },\n        {\n            \"merchantId\": 1,\n            \"merchantName\": \"merchant 1\",\n            \"outletId\": 1,\n            \"outletName\": \"Outlet 1\",\n            \"omzet\": 0,\n            \"date\": \"2021-11-17\"\n        },\n        {\n            \"merchantId\": 1,\n            \"merchantName\": \"merchant 1\",\n            \"outletId\": 1,\n            \"outletName\": \"Outlet 1\",\n            \"omzet\": 0,\n            \"date\": \"2021-11-18\"\n        },\n        {\n            \"merchantId\": 1,\n            \"merchantName\": \"merchant 1\",\n            \"outletId\": 1,\n            \"outletName\": \"Outlet 1\",\n            \"omzet\": 0,\n            \"date\": \"2021-11-19\"\n        },\n        {\n            \"merchantId\": 1,\n            \"merchantName\": \"merchant 1\",\n            \"outletId\": 1,\n            \"outletName\": \"Outlet 1\",\n            \"omzet\": 0,\n            \"date\": \"2021-11-20\"\n        }\n    ],\n    \"meta\": {\n        \"currentPage\": 2,\n        \"perPage\": 10,\n        \"lastPage\": 3,\n        \"totalData\": 30\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		}
+	]
+}

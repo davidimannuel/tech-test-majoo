@@ -1,0 +1,14 @@
+
+G. Dari test case pada point C dan point D, apakah struktur ERD yang dibentuk sudah optimal ? berikan penjelasannya
+jawaban: 
+    1. nama column "outlet_name" seharusnya cukup "name" saja karena sudah cukup mewakili nama user di table "Outlets"
+        hal ini berlaku juga untuk "merchant_name"
+    2. menurut saya seharusnya table "Transactions" tidak perlu menyimpan "merchantID" 
+        karena merchantID sudah terikat pada table "Outlets" sehingga cukup menyimpan outlet_id saja
+
+H. Dokumen teknis Data Manipulation Language (DML)
+jawaban: 
+    (postgreSQL)
+    ALTER TABLE Outlets RENAME COLUMN outlet_name TO name; (ubah nama kolom outlet_name menjadi name di table Outlets)
+    ALTER TABLE Merchants RENAME COLUMN merchant_name TO name; (ubah nama kolom merchant_name menjadi name di table Merchants)
+    ALTER TABLE Transactions DROP COLUMN merchant_id; (hapus kolom merchant_id)
