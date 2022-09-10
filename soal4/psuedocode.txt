@@ -1,0 +1,18 @@
+
+var array numbers = [4, -7, -5, 3, 3.3, 9, 0, 10, 0.2]
+
+var i = 0, j = 0
+
+for i < (len(numbers) - 1) 
+    for j < (len(numbers) - 1) 
+        if numbers[j] > numbers[j+1] {
+            numbers[j] = numbers[j+1]
+            numbers[j+1] =numbers[j]
+        } 
+        j++
+    end for
+    i++
+end for
+
+print numbers
+

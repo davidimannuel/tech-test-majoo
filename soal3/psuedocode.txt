@@ -1,18 +1,17 @@
-1. masukan input1, input2, x int
+var input1, input2, x int
 
-2. inisialisasi deretArray dan masukan input1 dan input 2 ke dalam deretArray
-    deretArray = [iput1,input2]
+deretArray = [iput1,input2]
 
-3. tentukan selisih deret  
-    selisihDeret = input2 - input1 
+var selisihDeret = input2 - input1 
 
-4. inisialisasi variable sementara 
-    tempBilangan = input2
+var tempBilangan = input2
 
-5. inisialisasi i = 0
-6. selama i < (x-2)
+var i = 0
+
+for i < (x-2)
     tempBilangan += selisihDeret
-    masukan tempBilangan ke deretArray
     deretArray = append(deretArray,tempBilangan)
-7. tampilkan deret array  
-    print deretArray
+    i++
+end for    
+    
+print deretArray

@@ -10,11 +10,12 @@ import (
 /*
 	Jawaban No 2:
 	apa saja yang harus diperbaiki ? kita bisa menggunakan interface
-	untuk mengabstraksi area sehingga tidak butuh type, berikut contoh code saya berikan di bawah
+	untuk mengabstraksi bangun datar (persegi,persegi panjang,segitiga)
+	sehingga tidak butuh type tiap bangun datar, berikut contoh code saya berikan di bawah
 */
 
 type (
-	// interface area
+	// interface bangun datar
 	IBangunDatar interface {
 		GetArea() int64
 		GetType() string
