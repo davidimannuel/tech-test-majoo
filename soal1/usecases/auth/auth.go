@@ -27,7 +27,7 @@ func (uc *authUsecase) Login(ctx context.Context, ent AuthEntity) (token string,
 		return
 	}
 
-	encryptedPassword := fmt.Sprintf("%x", md5.Sum([]byte(ent.UserName)))
+	encryptedPassword := fmt.Sprintf("%x", md5.Sum([]byte(ent.Password)))
 	if user.Password != string(encryptedPassword) {
 		err = errors.New("invalid password")
 		if err != nil {
